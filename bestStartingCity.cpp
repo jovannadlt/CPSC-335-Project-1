@@ -22,6 +22,7 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
         // Edge-case handling:
         // Tells you if the journey is even possible.
         // If surplus is negative, then no mater where you start, you'll run out of fuel before reaching the original city.
+        // This also eliminates the need to do a "wrap-around" by keeping track of all previous surplus fuel [i . . . n]
 
         totalSurplus += net;
 
