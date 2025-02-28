@@ -4,8 +4,8 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
 {
 
     int n = city_distances.size(); // Get the total number of cities
-    int totalSurplus = 0;          // Tracks net for all cities
-    int currentSurplus = 0;        // Tracks net since last reset
+    int totalSurplus = 0;          // Tracks net fuel for all cities
+    int currentSurplus = 0;        // Tracks net fuel since last reset
     int startCity = 0;             // initialize the starting city as city 0
 
     for (int i = 0; i < n; i++)
@@ -13,10 +13,10 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
         // Net = fuel gained at city i minus distance to next city
         int net = fuel[i] * mpg - city_distances[i];
 
-        // Edge-case handling: 
-        // Tells you if the journey is even possible. 
+        // Edge-case handling:
+        // Tells you if the journey is even possible.
         // If surplus is negative, then no mater where you start, you'll run out of fuel before reaching the original city.
-        
+
         totalSurplus += net;
 
         // This keeps track of the surplus fuel for the current candidate starting city.
