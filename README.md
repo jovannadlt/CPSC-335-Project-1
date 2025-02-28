@@ -11,6 +11,10 @@
 
 #         g++ bestStartingCity.cpp bestStartingCity.h main.cpp -o bestStartingCity
 
+#       if you are using an oder version of c++ :
+#         g++ -std=c++14 bestStartingCity.cpp main.cpp -o bestStartingCity
+#         g++ -std=c++17 bestStartingCity.cpp main.cpp -o bestStartingCity
+
 # STEP 2: 
 
 #        Run bestStartingCity.out in commandline
