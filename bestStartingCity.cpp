@@ -1,5 +1,10 @@
 #include "bestStartingCity.h"
 
+
+// Note that this alogrithim uses an "implicit wrap-around"
+// Since we are keeping track of the final total surplus, we know if the trip is possible at all.
+
+
 int bestStartingCity(const std::vector<int> &city_distances, const std::vector<int> &fuel, int mpg)
 {
 
@@ -8,6 +13,7 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
     int currentSurplus = 0;        // Tracks net fuel since last reset
     int startCity = 0;             // initialize the starting city as city 0
 
+    // Start the journey
     for (int i = 0; i < n; i++)
     {
         // Net = fuel gained at city i minus distance to next city
@@ -28,16 +34,20 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
             startCity = i + 1;  // Move start candidate to the next city
             currentSurplus = 0; // Reset
         }
+
+        // Continue until you run out of fuel, or traverse all the cities. 
     }
 
     // If total is nonnegative, startCity is the unique valid index; otherwise, no solution
     if (totalSurplus >= 0)
     {
-        return startCity;
-    }
-    else
-    {
-        std::cout << "No valid starting city.";
+        std::cout << "The preferred starting city is city " << startCity << ".\n";
+
+        return 0;
+    } else {
+
+        std::cout << "No valid starting city." << "\n";
+
         return 0;
     }
 }

@@ -11,7 +11,7 @@ int main()
     std::vector<int> fuel           = {1, 2, 1, 0, 3};
     int mpg = 10;
 
-    std::cout << "The preferred starting city is city " << bestStartingCity(city_distances, fuel, mpg) << "\n";
+    bestStartingCity(city_distances, fuel, mpg);
     
     return 0;
 
