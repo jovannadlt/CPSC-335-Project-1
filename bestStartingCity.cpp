@@ -22,7 +22,7 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
         // This keeps track of the surplus fuel for the current candidate starting city.
         currentSurplus += net;
 
-        // If surplus goes negative, none of the cities in [startCity..i] can be valid
+        // If surplus goes negative, this isn't a valid starting city, move on to the next and reset.
         if (currentSurplus < 0)
         {
             startCity = i + 1;  // Move start candidate to the next city
