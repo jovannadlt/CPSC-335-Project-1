@@ -49,6 +49,6 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
 
         std::cout << "No valid starting city." << "\n";
 
-        return 0;
+        return -1;
     }
 }
