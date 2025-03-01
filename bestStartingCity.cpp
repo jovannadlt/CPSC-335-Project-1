@@ -44,7 +44,7 @@ int bestStartingCity(const std::vector<int> &city_distances, const std::vector<i
     {
         std::cout << "The preferred starting city is city " << startCity << ".\n";
 
-        return 0;
+        return startCity;
     } else {
 
         std::cout << "No valid starting city." << "\n";
